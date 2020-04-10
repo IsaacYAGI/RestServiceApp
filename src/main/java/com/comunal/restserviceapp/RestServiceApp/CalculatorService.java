@@ -42,5 +42,20 @@ public class CalculatorService {
 	
 		return sum;
 	}
+	
+	public int getMul() {
+		int acum = 1;
+		
+		for (int i : numbers) {
+			acum*=i;
+		}
+		
+		return acum;
+	}
 
+	public int getMul(int[] numbers) {
+		setNumbers(numbers);
+		
+		return getMul();
+	}
 }

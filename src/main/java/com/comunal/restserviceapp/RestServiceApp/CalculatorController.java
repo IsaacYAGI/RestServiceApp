@@ -24,4 +24,10 @@ public class CalculatorController {
 		System.out.println(numbersForm.toString());
 		return new ResponseCalculation(calculatorService.getSub(numbersForm.getNumbers()));
 	}
+	
+	@PostMapping("/mul")
+	public ResponseCalculation mulOperation(@RequestBody NumbersForm numbersForm) {
+		System.out.println(numbersForm.toString());
+		return new ResponseCalculation(calculatorService.getMul(numbersForm.getNumbers()));
+	}
 }
