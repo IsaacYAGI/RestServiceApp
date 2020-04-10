@@ -18,4 +18,10 @@ public class CalculatorController {
 		System.out.println(numbersForm.toString());
 		return new ResponseCalculation(calculatorService.getSum(numbersForm.getNumbers()));
 	}
+	
+	@PostMapping("/sub")
+	public ResponseCalculation subOperation(@RequestBody NumbersForm numbersForm) {
+		System.out.println(numbersForm.toString());
+		return new ResponseCalculation(calculatorService.getSub(numbersForm.getNumbers()));
+	}
 }

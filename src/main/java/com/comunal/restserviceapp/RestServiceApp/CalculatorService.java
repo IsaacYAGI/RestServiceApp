@@ -31,5 +31,16 @@ public class CalculatorService {
 		setNumbers(numbers);
 		return getSum();
 	}
+	
+	public int getSub(int[] numbers) {
+		//int[] actualNumbers = getNumbers();
+		
+		int sum = IntStream
+		.range(0, numbers.length) 
+        .map(i -> i == 0? numbers[i] : -numbers[i]) 
+        .sum(); 
+	
+		return sum;
+	}
 
 }
