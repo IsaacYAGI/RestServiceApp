@@ -3,9 +3,10 @@ package com.comunal.restserviceapp.RestServiceApp;
 import java.util.stream.IntStream;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
-public class Calculator {
+@Service("calculatorService")
+public class CalculatorService {
 	private int[] numbers;
 
 	public int[] getNumbers() {
@@ -16,7 +17,7 @@ public class Calculator {
 		this.numbers = numbers;
 	}
 	
-	public Calculator(int[] numbers) {
+	public CalculatorService(int[] numbers) {
 		super();
 		this.numbers = numbers;
 	}
@@ -24,6 +25,11 @@ public class Calculator {
 	public int getSum() {
 		int sum = IntStream.of(getNumbers()).sum();
 		return sum;
+	}
+	
+	public int getSum(int[] numbers) {
+		setNumbers(numbers);
+		return getSum();
 	}
 
 }
